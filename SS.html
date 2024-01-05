@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System</title>
+   
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+      
+</head>
+<body>
+    <a-scene>
+        <!-- ASSERTS -->
+        <a-assert>
+            <img id="img" src="img\\gal3.jpg">  
+
+            <img id="MERCURY" src="img\\mercury_surface.jpg">
+            <img id="VENUS" src="img\\venus_surface1.jpg">
+            <img id="EARTH" src="img\\earth_surface.jpg">
+            <img id="MARS" src="img\\mar_surface.jpeg">
+            <img id="JUPITER" src="img/jupiter_surface2.jpeg">
+            <img id="SATURN" src="img\\saturn_surface1.webp">
+            <img id="URANUS" src="img\\uranus_surface.jpg">
+            <img id="NEPTUNE" src="img\\neptune_surface2.jpg">
+            <img id="SUN" src="img\\sun_surface.jpeg">
+            <img id="MOON" src="img\moon_surface.jpg">
+        </a-assert>
+
+         <!-- LIGHT SOURCE -->
+         <!-- <a-light type="directional" position="2 10 5" target="a-camera"></a-light>  -->
+
+         <!-- CAMERA -->
+         <a-camera position ="0 2 10" look-controls="enabled: true"></a-camera>
+
+        <!-- SKY -->
+        <a-sky src="#img"></a-sky>
+        <!-- SUN -->
+            <a-entity>
+                <a-sphere  position="0 0 0 " radius ="1.5" material="src : #SUN"></a-sphere>
+        
+            </a-entity>
+        <!-- PLANETS -->
+        
+        <!-- MERCURY -->
+        <a-entity position ="0 0 0"  animation="property:rotation ; to: 0 360 0; loop: true ;dur: 20000 ; easing: linear" > 
+            <a-sphere position="3 0 0" radius="0.3"   material="src :#MERCURY "animation="property:rotation ; to: 0 360 0; loop: true ;dur: 20000 ;easing: linear"></a-sphere>
+        </a-entity> 
+
+        <!--VENUS-->
+        <a-entity position ="0 0 0"  animation="property:rotation ; to: 0 360 0; loop: true ;dur: 50000 ; easing: linear" > 
+            <a-sphere position="5 0 0" radius="0.5"  material="src : #VENUS" animation="property:rotation ; to: 0 360 0; loop: true ;dur: 20000 ;easing: linear"></a-sphere>
+        </a-entity> 
+
+        <!--EARTH-->
+        <a-entity position ="0 0 0"  animation="property:rotation ; to: 0 360 0; loop: true ;dur: 25000 ; easing: linear" > 
+            <a-sphere position="7 0 0" radius="0.5"  material="src : #EARTH" animation="property:rotation ; to: 0 360 0; loop: true ;dur: 20000 ;easing: linear">
+
+                <a-entity position ="0 0 0"  animation="property:rotation ; to: 0 360 0; loop: true ;dur: 10000 ; easing: linear" > 
+                    <a-sphere position="1.1 0 0" radius="0.2"  material="src : #MOON" animation="property:rotation ; to: 0 360 0; loop: true ;dur: 20000 ;easing: linear"></a-sphere> 
+                </a-entity>
+
+            </a-sphere>  
+        </a-entity> 
+
+        <!-- MARS-->
+        <a-entity position ="0 0 0"  animation="property:rotation ; to: 0 360 0; loop: true ;dur: 28000 ; easing: linear" > 
+            <a-sphere position="9 0 0" radius="0.4"  material="src : #MARS" animation="property:rotation ; to: 0 360 0; loop: true ;dur: 20000 ;easing: linear"></a-sphere> 
+        </a-entity> 
+
+        <!--JUPITER-->
+        <a-entity position ="0 0 0"  animation="property:rotation ; to: 0 360 0; loop: true ;dur: 15000 ; easing: linear" > 
+            <a-sphere position="12 0 0" radius="1" material="src :#JUPITER "animation="property:rotation ; to: 0 360 0; loop: true ;dur: 20000 ;easing: linear"></a-sphere>   
+        </a-entity> 
+
+        <!--SATURN -->
+        <a-entity position ="0 0 0"  animation="property:rotation ; to: 0 360 0; loop: true ;dur: 15000 ; easing: linear" > 
+            <a-sphere position="16 0 0" radius="0.8"  material="src :#SATURN" animation="property:rotation ; to: 0 360 0; loop: true ;dur: 20000 ;easing: linear">
+                <a-ring position="0 0 0" radius-inner="1.5" radius-outer="2.3" color="#555" opacity="1" rotation="-70 0 0"></a-ring>
+            </a-sphere>  
+        </a-entity> 
+
+        <!--URANUS-->
+        <a-entity position ="0 0 0"  animation="property:rotation ; to: 0 360 0; loop: true ;dur: 23000 ; easing: linear" > 
+            <a-sphere position="20 0 0" radius="0.7"  material="src :#URANUS" animation="property:rotation ; to: 0 360 0; loop: true ;dur: 20000 ;easing: linear "></a-sphere>  
+        </a-entity> 
+
+        <!--NEPTUNE-->
+        <a-entity position ="0 0 0"  animation="property:rotation ; to: 0 360 0; loop: true ;dur:23000 ; easing: linear" > 
+            <a-sphere position="24 0 0" radius="0.6"  material="src :#NEPTUNE" animation="property:rotation ; to: 0 360 0; loop: true ;dur: 20000 ;easing: linear"></a-sphere>   
+        </a-entity> 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- ORBITS -->
+        <a-ring position="0 0 0" radius-inner="2.7" radius-outer="3.3" color="#555" opacity="0.4" rotation="-90 0 0"></a-ring>
+        <a-ring position="0 0 0" radius-inner="4.5" radius-outer="5.5" color="#555" opacity="0.4" rotation="-90 0 0"></a-ring>
+        <a-ring position="0 0 0" radius-inner="6.5" radius-outer="7.5" color="#555" opacity="0.4" rotation="-90 0 0"></a-ring>
+        <a-ring position="0 0 0" radius-inner="8.5" radius-outer="9.5" color="#555" opacity="0.4" rotation="-90 0 0"></a-ring>
+        <a-ring position="0 0 0" radius-inner="10.9" radius-outer="13.1" color="#555" opacity="0.4" rotation="-90 0 0"></a-ring>
+        <a-ring position="0 0 0" radius-inner="15.1" radius-outer="16.9" color="#555" opacity="0.4" rotation="-90 0 0"></a-ring>
+        <a-ring position="0 0 0" radius-inner="19.2" radius-outer="20.8" color="#555" opacity="0.4" rotation="-90 0 0"></a-ring>
+        <a-ring position="0 0 0" radius-inner="23.3" radius-outer="24.7" color="#555" opacity="0.4" rotation="-90 0 0"></a-ring>
+
+       
+        
+
+
+      </a-scene>
+
+</body>
+</html>
